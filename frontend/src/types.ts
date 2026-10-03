@@ -96,8 +96,8 @@ export interface RequestStatusCount {
 
 export interface RequestFulfilmentMetrics {
   status_counts: RequestStatusCount[];
-  median_time_to_delivery_seconds?: number;
-  median_time_to_delivery_hours?: number;
+  median_time_to_delivery_seconds?: number | null;
+  median_time_to_delivery_hours?: number | null;
 }
 
 export interface TopTaskCount {

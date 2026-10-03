@@ -85,7 +85,7 @@ export const AnalyticsDashboard: React.FC = () => {
               <div>
                 <div style={{ fontSize: '0.8rem', fontWeight: '700', color: 'var(--text-muted)' }}>MEDIAN DELIVERED TIME</div>
                 <div style={{ fontSize: '1.85rem', fontWeight: '800', color: 'white', marginTop: '0.1rem' }}>
-                  {analytics.request_fulfilment.median_time_to_delivery_hours !== undefined
+                  {analytics.request_fulfilment.median_time_to_delivery_hours != null
                     ? `${analytics.request_fulfilment.median_time_to_delivery_hours} hrs`
                     : 'N/A'}
                 </div>
