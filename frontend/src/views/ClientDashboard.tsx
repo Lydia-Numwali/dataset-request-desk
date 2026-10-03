@@ -1,3 +1,13 @@
+declare module 'react/jsx-runtime';
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      [elemName: string]: any;
+    }
+  }
+}
+
 import React, { useState, useEffect } from 'react';
 import { RequestItem } from '../types';
 import { apiFetch } from '../api/client';

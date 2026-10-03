@@ -31,7 +31,6 @@ The system auto-seeds the following accounts on startup (password hashed securel
 | **Client** | `client-a@example.com` | `client123` | Acme Robotics | Create requests, view own requests, accept/reject delivery |
 | **Client** | `client-b@example.com` | `client123` | Beta Labs | Create requests, view own requests, accept/reject delivery |
 
-*(Note: The login UI also provides quick 1-click preset buttons for all seed accounts).*
 
 ---
 

@@ -1,13 +1,12 @@
-import React from 'react';
-import { useAuth } from '../context/AuthContext';
 import { Bot, FileText, Upload, BarChart3, Users, LogOut, Shield, ChevronRight } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
 
 interface SidebarProps {
   activeTab: string;
   setActiveTab: (tab: string) => void;
 }
 
-export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => {
+export const Sidebar = ({ activeTab, setActiveTab }: SidebarProps) => {
   const { user, logout } = useAuth();
 
   if (!user) return null;
