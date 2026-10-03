@@ -120,7 +120,7 @@ export const AnalyticsDashboard: React.FC = () => {
             {/* Top 5 Task Names by Good Episodes */}
             <div className="glass-panel" style={{ padding: '1.75rem' }}>
               <h3 style={{ fontSize: '1.1rem', fontWeight: '700', marginBottom: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <Trophy size={20} color="#fbbf24" /> Top 5 Tasks by Good Episodes
+                <Trophy size={20} color="var(--primary)" /> Top 5 Tasks by Good Episodes
               </h3>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
