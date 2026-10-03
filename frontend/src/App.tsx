@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from './context/AuthContext';
-import { Navbar } from './components/Navbar';
+import { Sidebar } from './components/Sidebar';
 import { LoginView } from './views/LoginView';
 import { ClientDashboard } from './views/ClientDashboard';
 import { OperatorDashboard } from './views/OperatorDashboard';
@@ -40,9 +40,9 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
-      <main style={{ flex: 1 }}>
+    <div style={{ minHeight: '100vh', display: 'flex', width: '100vw', overflowX: 'hidden' }}>
+      <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
+      <main style={{ flex: 1, minWidth: 0, padding: '2rem', overflowY: 'auto' }}>
         {renderContent()}
       </main>
     </div>
