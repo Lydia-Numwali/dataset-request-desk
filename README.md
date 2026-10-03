@@ -74,7 +74,7 @@ submitted → in_progress → delivered → accepted
 
 ---
 
-## High-Volume Performance (5 Million Episodes Scale)
+## High-Volume Performance 
 
 All analytics endpoints (`/api/v1/analytics`) execute directly inside PostgreSQL via SQL aggregations (`GROUP BY`, window functions, and `PERCENTILE_CONT(0.5)`).
 
