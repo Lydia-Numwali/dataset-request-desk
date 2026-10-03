@@ -131,7 +131,7 @@ export const OperatorDashboard: React.FC = () => {
                     <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginTop: '0.75rem', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
                       <span>Requested: <strong>{req.episodes_requested} episodes</strong></span>
                       <span>Deadline: <strong>{new Date(req.deadline).toLocaleDateString()}</strong></span>
-                      {req.notes && <span>Notes: <em>{req.notes}</em></span>}
+                      {req.notes && <span>Notes: <em style={{ fontStyle: 'italic' }}>{req.notes}</em></span>}
                     </div>
                   </div>
 
@@ -179,7 +179,7 @@ export const OperatorDashboard: React.FC = () => {
                   </h4>
 
                   {assignedCount === 0 ? (
-                    <div style={{ fontSize: '0.8rem', color: 'var(--text-dim)', italic: true }}>No episodes assigned yet.</div>
+                    <div style={{ fontSize: '0.8rem', color: 'var(--text-dim)', fontStyle: 'italic' }}>No episodes assigned yet.</div>
                   ) : (
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '0.75rem' }}>
                       {req.assignments.map((asgn) => (
@@ -280,7 +280,7 @@ export const OperatorDashboard: React.FC = () => {
                         <td style={{ padding: '0.75rem 1rem' }}>{ep.duration_seconds}s</td>
                         <td style={{ padding: '0.75rem 1rem', textAlign: 'right' }}>
                           {isAlreadyAssigned ? (
-                            <span style={{ fontSize: '0.75rem', color: 'var(--text-dim)', italic: true }}>Assigned</span>
+                            <span style={{ fontSize: '0.75rem', color: 'var(--text-dim)', fontStyle: 'italic' }}>Assigned</span>
                           ) : !isGoodOrUsable ? (
                             <span style={{ fontSize: '0.75rem', color: '#f87171' }}>Quality Guard</span>
                           ) : (

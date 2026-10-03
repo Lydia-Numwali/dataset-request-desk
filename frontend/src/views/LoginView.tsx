@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { Bot, KeyRound, Mail, AlertCircle, ArrowRight, UserCheck } from 'lucide-react';
+import { Bot, KeyRound, Mail, AlertCircle, ArrowRight } from 'lucide-react';
 
 export const LoginView: React.FC = () => {
   const { login } = useAuth();
@@ -20,12 +20,6 @@ export const LoginView: React.FC = () => {
     } finally {
       setIsSubmitting(false);
     }
-  };
-
-  const handleQuickLogin = (uEmail: string, uPass: string) => {
-    setEmail(uEmail);
-    setPassword(uPass);
-    setError(null);
   };
 
   return (
@@ -52,7 +46,7 @@ export const LoginView: React.FC = () => {
 
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
             <div>
-              <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', color: 'var(--text-muted)', marginBottom: '0.5rem', uppercase: true }}>
+              <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: '600', color: 'var(--text-muted)', marginBottom: '0.5rem', textTransform: 'uppercase' }}>
                 Email Address
               </label>
               <div style={{ position: 'relative' }}>
@@ -90,50 +84,6 @@ export const LoginView: React.FC = () => {
               <ArrowRight size={18} />
             </button>
           </form>
-
-          {/* Quick Preset Credentials for Reviewers */}
-          <div style={{ marginTop: '2rem', paddingTop: '1.5rem', borderTop: '1px solid var(--border-color)' }}>
-            <p style={{ fontSize: '0.75rem', fontWeight: '700', color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.85rem', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-              <UserCheck size={14} /> Quick Seed Logins (Reviewers)
-            </p>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
-              <button
-                type="button"
-                onClick={() => handleQuickLogin('admin@example.com', 'admin123')}
-                style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-sm)', padding: '0.5rem', textAlign: 'left' }}
-              >
-                <div style={{ fontSize: '0.75rem', fontWeight: '700', color: '#c084fc' }}>Admin</div>
-                <div style={{ fontSize: '0.65rem', color: 'var(--text-dim)' }}>admin@example.com</div>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => handleQuickLogin('ops1@example.com', 'ops123')}
-                style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-sm)', padding: '0.5rem', textAlign: 'left' }}
-              >
-                <div style={{ fontSize: '0.75rem', fontWeight: '700', color: '#fbbf24' }}>Operator 1</div>
-                <div style={{ fontSize: '0.65rem', color: 'var(--text-dim)' }}>ops1@example.com</div>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => handleQuickLogin('client-a@example.com', 'client123')}
-                style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-sm)', padding: '0.5rem', textAlign: 'left' }}
-              >
-                <div style={{ fontSize: '0.75rem', fontWeight: '700', color: '#60a5fa' }}>Client A</div>
-                <div style={{ fontSize: '0.65rem', color: 'var(--text-dim)' }}>Acme Robotics</div>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => handleQuickLogin('client-b@example.com', 'client123')}
-                style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-sm)', padding: '0.5rem', textAlign: 'left' }}
-              >
-                <div style={{ fontSize: '0.75rem', fontWeight: '700', color: '#60a5fa' }}>Client B</div>
-                <div style={{ fontSize: '0.65rem', color: 'var(--text-dim)' }}>Beta Labs</div>
-              </button>
-            </div>
-          </div>
 
         </div>
 
